@@ -81,7 +81,6 @@ a:hover {
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 .btn {
@@ -197,15 +196,17 @@ a:hover {
     animation: fadeIn 1s ease-in;
 }
 
-/* Cursor */
-body {
-    cursor: none;
-}
+/* Cursor - Only on devices with mouse support */
+@media (pointer: fine) {
+    body {
+        cursor: none;
+    }
 
-a,
-button,
-.btn {
-    cursor: none;
+    a,
+    button,
+    .btn {
+        cursor: none;
+    }
 }
 
 /* Mobile Responsiveness */

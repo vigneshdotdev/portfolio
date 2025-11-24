@@ -19,7 +19,7 @@ const Hero = () => {
         }, 100);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [fullText]);
 
     return (
         <section id="about" style={{
@@ -65,12 +65,32 @@ const Hero = () => {
                         animation: 'slideUp 1s ease-out'
                     }}>
                         {config.hero.title.prefix} <br />
-                        <span className="gradient-text">
-                            {typedText}
+                        <span style={{ position: 'relative', display: 'inline' }}>
+                            {/* Invisible placeholder to reserve space */}
                             <span style={{
-                                borderRight: '3px solid var(--accent-primary)',
-                                animation: 'pulse 1s infinite'
-                            }}>|</span>
+                                visibility: 'hidden',
+                                fontWeight: 800,
+                                fontSize: 'inherit',
+                                lineHeight: 'inherit'
+                            }} className="gradient-text">
+                                {fullText}
+                            </span>
+                            {/* Actual typed text overlaid on top */}
+                            <span className="gradient-text" style={{
+                                position: 'absolute',
+                                left: 0,
+                                top: 0,
+                                fontWeight: 800,
+                                fontSize: 'inherit',
+                                lineHeight: 'inherit',
+                                whiteSpace: 'nowrap'
+                            }}>
+                                {typedText}
+                                <span style={{
+                                    borderRight: '3px solid var(--accent-primary)',
+                                    animation: 'pulse 1s infinite'
+                                }}>|</span>
+                            </span>
                         </span>
                     </h1>
                     <p style={{

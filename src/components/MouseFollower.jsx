@@ -4,6 +4,7 @@ import { motion, useSpring, useMotionValue } from 'framer-motion';
 const MouseFollower = () => {
   const [isPointer, setIsPointer] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasMouseSupport, setHasMouseSupport] = useState(true);
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -13,6 +14,14 @@ const MouseFollower = () => {
   const springY = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    // Check if device has fine pointer support (mouse)
+    const checkMouseSupport = () => {
+      const hasPointer = window.matchMedia('(pointer: fine)').matches;
+      setHasMouseSupport(hasPointer);
+    };
+
+    checkMouseSupport();
+
     const moveCursor = (e) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
@@ -31,18 +40,20 @@ const MouseFollower = () => {
     const handleMouseLeave = () => setIsVisible(false);
     const handleMouseEnter = () => setIsVisible(true);
 
-    window.addEventListener('mousemove', moveCursor);
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseenter', handleMouseEnter);
+    if (hasMouseSupport) {
+      window.addEventListener('mousemove', moveCursor);
+      document.addEventListener('mouseleave', handleMouseLeave);
+      document.addEventListener('mouseenter', handleMouseEnter);
+    }
 
     return () => {
       window.removeEventListener('mousemove', moveCursor);
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseenter', handleMouseEnter);
     };
-  }, []);
+  }, [hasMouseSupport]);
 
-  if (!isVisible) return null;
+  if (!hasMouseSupport || !isVisible) return null;
 
   return (
     <>
