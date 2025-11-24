@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Portfolio Inquiry</title>
+    <style>
+        /* Reset styles */
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        img {
+            border: 0;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .content-padding {
+                padding: 20px !important;
+            }
+
+            .header-padding {
+                padding: 20px !important;
+            }
+
+            .col-stack {
+                display: block !important;
+                width: 100% !important;
+                margin-bottom: 15px;
+            }
+
+            .text-right-mobile {
+                text-align: left !important;
+            }
+        }
+    </style>
+</head>
+
+<body
+    style="margin: 0; padding: 0; background-color: #f4f4f5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+
+    <!-- Main Wrapper -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f4f4f5; padding: 20px 0;">
+        <tr>
+            <td align="center">
+
+                <!-- Email Container -->
+                <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                    style="max-width: 600px; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e0e0e0;">
+
+                    <!-- Header -->
+                    <tr>
+                        <td class="header-padding" align="center"
+                            style="background-color: #0a0a0a; padding: 30px 20px; border-bottom: 4px solid #38bdf8;">
+                            <h2 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 600;">New Portfolio
+                                Inquiry 🚀</h2>
+                        </td>
+                    </tr>
+
+                    <!-- Content -->
+                    <tr>
+                        <td class="content-padding" style="padding: 40px 30px;">
+
+                            <!-- Sender Info Section -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%"
+                                style="margin-bottom: 30px; border-bottom: 1px solid #f0f0f0;">
+                                <tr>
+                                    <td style="padding-bottom: 20px;">
+                                        <!-- Using a table for columns to ensure alignment -->
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <!-- Left Column: Sender -->
+                                                <td class="col-stack" valign="top" width="60%">
+                                                    <p
+                                                        style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 8px 0; font-weight: 600;">
+                                                        Sender</p>
+                                                    <h3 style="color: #1a1a1a; font-size: 18px; margin: 0 0 5px 0;">
+                                                        {{user_name}}</h3>
+                                                    <a href="mailto:{{user_email}}"
+                                                        style="color: #38bdf8; text-decoration: none; font-size: 14px; font-weight: 500;">{{user_email}}</a>
+                                                </td>
+
+                                                <!-- Right Column: Role -->
+                                                <td class="col-stack text-right-mobile" valign="top" width="40%"
+                                                    align="right">
+                                                    <p
+                                                        style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 8px 0; font-weight: 600;">
+                                                        Role</p>
+                                                    <span
+                                                        style="display: inline-block; background-color: #f0f9ff; color: #0369a1; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid #bae6fd;">
+                                                        {{user_role}}
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Message Section -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <p
+                                            style="color: #888; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin: 0 0 15px 0; font-weight: 600;">
+                                            Message</p>
+                                        <div
+                                            style="background-color: #fafafa; padding: 25px; border-radius: 8px; border-left: 4px solid #38bdf8; color: #333; line-height: 1.8; font-size: 15px;">
+                                            {{message}}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td align="center"
+                            style="background-color: #f8fafc; padding: 20px; border-top: 1px solid #e2e8f0;">
+                            <p style="color: #94a3b8; font-size: 12px; margin: 0;">
+                                Sent from your <strong>Portfolio Website</strong>
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+                <!-- End Email Container -->
+
+            </td>
+        </tr>
+    </table>
+    <!-- End Main Wrapper -->
+
+</body>
+
+</html>
