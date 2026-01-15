@@ -64,10 +64,10 @@ const Contact = () => {
                                     <span>GitHub</span>
                                 </a>
 
-                                <a href={config.contact.social.leetcode} target="_blank" rel="noopener noreferrer" className="social-link" style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
+                                {/* <a href={config.contact.social.leetcode} target="_blank" rel="noopener noreferrer" className="social-link" style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.3s' }}>
                                     <FaCode size={24} color="#f89f1b" />
                                     <span>LeetCode</span>
-                                </a>
+                                </a> */}
                             </div>
 
                             <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid var(--glass-border)' }}>
